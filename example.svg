@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#08080a"/><stop offset=".5" stop-color="#3a0b13"/><stop offset="1" stop-color="#111116"/>
+  </linearGradient>
+</defs>
+<rect width="600" height="900" fill="url(#g)"/>
+<path d="M0 650 L600 250" stroke="#e3122d" stroke-width="2" opacity=".7"/>
+<path d="M0 690 L600 290" stroke="#c9cbd0" stroke-width="1" opacity=".35"/>
+<text x="40" y="100" fill="#e3122d" font-family="Arial" font-size="24" letter-spacing="8">NEXUS</text>
+<text x="40" y="470" fill="#f3f3f5" font-family="Arial" font-weight="bold" font-size="58">EXAMPLE</text>
+<text x="40" y="535" fill="#c9cbd0" font-family="Arial" font-size="25" letter-spacing="5">MOVIE</text>
+<text x="40" y="850" fill="#777980" font-family="Arial" font-size="15" letter-spacing="4">NXL // 001</text>
+</svg>
