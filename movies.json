@@ -1,0 +1,22 @@
+[
+  {
+    "id": "NXL-001",
+    "title": "Example Movie",
+    "year": 2026,
+    "category": "Sci-Fi",
+    "rating": "PG-13",
+    "description": "Replace this entry with one of your movies.",
+    "image": "images/posters/example.svg",
+    "drive": "https://drive.google.com/file/d/REPLACE_WITH_FILE_ID/view"
+  },
+  {
+    "id": "NXL-002",
+    "title": "Second Example",
+    "year": 2025,
+    "category": "Action",
+    "rating": "PG-13",
+    "description": "Add as many movies as you want.",
+    "image": "images/posters/example.svg",
+    "drive": "https://drive.google.com/file/d/REPLACE_WITH_FILE_ID/view"
+  }
+]
