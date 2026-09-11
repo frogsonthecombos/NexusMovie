@@ -1,0 +1,49 @@
+.movie-grid {
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:20px;
+}
+.movie-card {
+  min-width:0;
+  animation: card-in .55s both;
+  animation-delay: calc(var(--card-index) * 35ms);
+}
+.poster-button { width:100%; padding:0; border:0; background:none; cursor:pointer; text-align:left; }
+.poster-wrap {
+  position:relative; aspect-ratio:2/3; overflow:hidden;
+  background:#0c0c0f; border:1px solid #292a2f;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .25s, box-shadow .35s;
+}
+.poster-wrap::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(145deg,transparent 55%,rgba(255,255,255,.12),transparent 70%);
+  transform:translateX(-120%); transition:transform .6s ease;
+}
+.movie-card:hover .poster-wrap {
+  transform:translateY(-7px) scale(1.018);
+  border-color:#9a9ca1;
+  box-shadow:0 12px 35px rgba(0,0,0,.55), 0 0 0 1px rgba(227,18,45,.35), 0 0 28px rgba(227,18,45,.12);
+}
+.movie-card:hover .poster-wrap::after { transform:translateX(120%); }
+.poster-wrap img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.85) contrast(1.08); transition:filter .3s, transform .5s; }
+.movie-card:hover img { filter:saturate(1.05) contrast(1.08); transform:scale(1.035); }
+.play-orb {
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) scale(.8);
+  width:54px; height:54px; display:grid; place-items:center;
+  border-radius:50%; color:#fff; background:rgba(227,18,45,.86);
+  border:1px solid #ffb1bb; box-shadow:0 0 30px rgba(227,18,45,.5);
+  opacity:0; transition:.25s ease; font-size:15px; padding-left:2px;
+}
+.movie-card:hover .play-orb { opacity:1; transform:translate(-50%,-50%) scale(1); }
+.card-code {
+  position:absolute; top:9px; left:9px; padding:5px 7px;
+  background:rgba(5,5,6,.72); border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(6px); color:#d2d3d7; font:600 7px var(--font-display); letter-spacing:.12em;
+}
+.card-info { padding:12px 2px 0; }
+.card-title-row { display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+.card-title-row h3 { margin:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font:600 13px var(--font-display); }
+.card-title-row > span { flex:none; color:#707177; font:600 8px var(--font-display); }
+.card-meta { display:flex; gap:8px; margin-top:7px; color:#777980; font:600 8px var(--font-display); letter-spacing:.1em; }
+.card-meta span:first-child { color:var(--red); }
+@keyframes card-in { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }

@@ -1,0 +1,37 @@
+.player-modal {
+  position:fixed; inset:0; z-index:100; display:grid; place-items:center;
+  padding:clamp(12px,3vw,40px); opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s;
+}
+.player-modal.is-open { opacity:1; visibility:visible; }
+.player-backdrop { position:absolute; inset:0; background:rgba(0,0,0,.86); backdrop-filter:blur(18px); }
+.player-window {
+  position:relative; z-index:1; width:min(1200px,100%); background:#0a0a0c;
+  border:1px solid #5c5d63; box-shadow:0 0 0 1px rgba(227,18,45,.18), 0 30px 100px rgba(0,0,0,.8);
+  transform:translateY(18px) scale(.98); transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.player-modal.is-open .player-window { transform:none; }
+.player-topbar {
+  min-height:70px; display:flex; justify-content:space-between; align-items:center; gap:20px;
+  padding:12px 16px; border-bottom:1px solid var(--line);
+  background:linear-gradient(110deg,#151519,#09090b);
+}
+.player-topbar strong { display:block; margin-top:4px; font:600 15px var(--font-display); }
+.close-player {
+  width:42px; height:42px; border:1px solid #55565c; background:#111115; cursor:pointer;
+  font-size:30px; line-height:1; color:#bfc1c5; transition:.2s;
+}
+.close-player:hover { background:var(--red); border-color:#ff9aa7; color:white; transform:rotate(90deg); }
+.player-frame-wrap { position:relative; aspect-ratio:16/9; background:#000; }
+.player-frame-wrap iframe { width:100%; height:100%; display:block; border:0; }
+.player-loader {
+  position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+  background:#060607; color:#7c7e85; font:600 9px var(--font-display); letter-spacing:.14em; transition:.25s;
+}
+.player-loader.hidden { opacity:0; pointer-events:none; }
+.loader-ring {
+  width:42px; height:42px; border:2px solid #28292e; border-top-color:var(--red); border-right-color:var(--silver);
+  border-radius:50%; animation:spin .75s linear infinite;
+}
+.player-meta { display:flex; gap:18px; padding:12px 16px; color:#686a70; font:600 8px var(--font-display); letter-spacing:.13em; }
+.player-meta span:not(:last-child)::after { content:"//"; margin-left:18px; color:#3e3f44; }
+@keyframes spin { to { transform:rotate(360deg); } }

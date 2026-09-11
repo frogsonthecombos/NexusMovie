@@ -1,0 +1,20 @@
+.noise {
+  position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.scanlines {
+  position:fixed; inset:0; pointer-events:none; z-index:49; opacity:.035;
+  background:repeating-linear-gradient(to bottom, transparent 0, transparent 3px, #fff 4px);
+}
+.ambient { position:fixed; width:35vw; height:35vw; border-radius:50%; filter:blur(90px); pointer-events:none; opacity:.06; z-index:-1; }
+.ambient-a { top:15%; right:-15%; background:var(--red); }
+.ambient-b { bottom:0; left:-18%; background:#aaa; }
+.glitch-active { animation:glitch .42s steps(2,end); }
+@keyframes glitch {
+  0%,100% { transform:none; text-shadow:2px 0 var(--red),-2px 0 #aaa; }
+  15% { transform:translateX(-3px); text-shadow:5px 0 var(--red),-5px 0 #aaa; }
+  30% { transform:translateX(3px); clip-path:inset(10% 0 55% 0); }
+  45% { transform:none; clip-path:none; text-shadow:-4px 0 var(--red),4px 0 #aaa; }
+  60% { transform:skewX(-2deg); clip-path:inset(55% 0 8% 0); }
+  75% { transform:translateX(2px); clip-path:none; }
+}
